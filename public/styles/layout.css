@@ -15,6 +15,8 @@ html {
  */
 
 body {
+  display:flex;
+  flex-direction: column;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
@@ -22,9 +24,10 @@ body {
 }
 
 .container {
-  display: flex;
+  display:flex;
   justify-content: center;
   width:90%;
+  margin:auto;
   background-color: #f4f1ec;
 }
 
