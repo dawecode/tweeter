@@ -14,7 +14,7 @@ nav {
   justify-content:space-between;
 }
 
-span { 
+nav > span { 
   font-size:20px;
 }
 
@@ -25,7 +25,12 @@ span {
   font-family: "Bungee",cursive;
 }
 
-.write {
+.rightnav {
   display:flex;
   align-items:center;
+  flex-direction:column;
+}
+
+.fas.fa-angle-double-down{
+  color: crimson;
 }
