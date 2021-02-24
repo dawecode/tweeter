@@ -4,6 +4,9 @@ nav {
  background-color:#4056A1;
  color: #ffffff;
  padding: 1.5em;
+ position: fixed; /* Set the navbar to fixed position */
+ top: 0; 
+ width: 100%;
 }
 
 .navcontainer{
@@ -25,5 +28,4 @@ span {
 .write {
   display:flex;
   align-items:center;
-
 }
