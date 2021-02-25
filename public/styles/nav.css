@@ -1,3 +1,4 @@
+/* navigation bar - parent*/
 nav {
  width:100%;
  height: 120px;
@@ -9,15 +10,18 @@ nav {
  width: 100%;
 }
 
+/* nav container*/
 .navcontainer{
   display:flex;
   justify-content:space-between;
 }
 
+/* whole nav to set font*/
 nav > span { 
   font-size:20px;
 }
 
+/* tweeter logo*/
 .logo {
   display:flex;
   align-items: flex-end;
@@ -25,19 +29,22 @@ nav > span {
   font-family: "Bungee",cursive;
 }
 
+/* items at the right side in the navigation bar */
 .rightnav {
   display:flex;
   align-items:center;
   flex-direction:column;
 }
 
-.fas.fa-angle-double-down{
+/* double arrows */
+.fas.fa-angle-double-down {
   color: crimson;
 }
 
+/* media query for tablet */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   nav { 
-    background-color: #cc8800 ;
+    background-color: #cc8800;
     background-image: url(../images/black-thread-light.png);
   }
 }

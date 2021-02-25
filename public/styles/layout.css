@@ -14,6 +14,7 @@ html {
  * Global layout stuff
  */
 
+ /*body - parent */
 body {
   margin-top: 120px; /* Add a top margin to avoid content overlay */
   display:flex;
@@ -24,6 +25,7 @@ body {
   font-family: “Source Sans Pro” , sans-serif;
 }
 
+/* main form to write tweets*/
 .container {
   justify-content: center;
   width:90%;
@@ -32,7 +34,7 @@ body {
   margin-top:50px
 }
 
-
+/* article specs*/
 article {
   border:5px solid black;
   width:100%;
@@ -43,21 +45,25 @@ article {
   word-break: break-word;
 }
 
+/* what are you humming about  specs*/
 label {
   font:“Source Sans Pro” , sans-serif;
   font-weight: 700;
 
 }
+
+/* hover*/
 article:hover{
   box-shadow: 25px 30px rgba(38, 77, 184, 0.3);
   text-shadow:2px 2px rgba(1, 5, 14, 0.3); 
 }
 
+/* display of handle with over */
 article:hover .handle{
   visibility: visible;
 }
 
-
+/* hiding handle when not hovering */
 .handle {
   visibility:hidden;
 }
