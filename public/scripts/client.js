@@ -1,18 +1,13 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
-const escape =  function(str) {
+//escaping a script
+const escape = function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
 
 
  //create tweets
-const createTweetElement = function (tweetObj) {
+const createTweetElement = function(tweetObj) {
   const timeStamp = moment(tweetObj.created_at).fromNow();
   let $tweet = $(` 
   <article>
@@ -87,7 +82,7 @@ $(document).ready(function () {
       //slide up when error corrected
       $(".error1").slideUp();
       $(".error2").slideUp();
-      
+
       $.ajax({
         type: "POST",
         url: "/tweets",

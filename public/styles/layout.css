@@ -29,6 +29,7 @@ body {
   width:90%;
   margin:auto;
   background-color: #f4f1ec;
+  margin-top:50px
 }
 
 
@@ -42,6 +43,11 @@ article {
   word-break: break-word;
 }
 
+label {
+  font:“Source Sans Pro” , sans-serif;
+  font-weight: 700;
+
+}
 article:hover{
   box-shadow: 25px 30px rgba(38, 77, 184, 0.3);
   text-shadow:2px 2px rgba(1, 5, 14, 0.3); 
@@ -76,19 +82,4 @@ article footer{
   border-top: 5px solid black;
   justify-content: space-between;
   margin: 0.5em;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  nav { 
-    background-color: #cc8800 ;
-  }
-
-}
-
-@media only screen and (min-width: 1024px) {
-  body {
-   flex-direction:row;
-   justify-content: space-around;
-  };
- 
 }
