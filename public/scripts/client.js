@@ -76,12 +76,16 @@ $(document).ready(function () {
     const tweetData = $(this).serialize();
     console.log(tweetData);
     const numbChar = $(".new-tweet").find("textarea").val().length;
-    console.log(numbChar)
+   // console.log(numbChar)
     if (numbChar > 140) {
-      alert("Character number exceeded");
+      $(".error1").text("Character number exceeded").slideDown();
+    
     } else if (numbChar === 0) {
-      alert("Please write a message");
+      $(".error2").text("Please write a message").slideDown();
+  
     } else {
+      $(".error1").slideUp();
+      $(".error2").slideUp();
       $.ajax({
         type: "POST",
         url: "/tweets",

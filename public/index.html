@@ -59,6 +59,10 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
+     
+      <div class="error1 hide"></div>
+      <div class="error2 hide"></div>
+      
       <h2>Compose Tweet</h2>
       <form method="POST" action="/tweets">
         <label for="tweet-text">What are you humming about?</label>
@@ -68,10 +72,12 @@
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
-    </section>
-    <section id="tweets-container">
       
     </section>
+    <section id="tweets-container">
+     
+    </section>
+    
   </main>
 </body>
 

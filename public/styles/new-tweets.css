@@ -35,3 +35,28 @@
 .counter-overlimit {
   color:red;
 }
+
+
+.hide{
+  display:none;
+}
+
+.error1{
+  margin-top:20px;
+  border:5px solid red;
+  background-color: white;
+  color:red;
+  font-size:30px;
+  padding:20px;
+  text-align: center;
+}
+
+.error2{
+  margin-top:20px;
+  border:5px solid red;
+  background-color: white;
+  color:red;
+  font-size:30px;
+  padding:20px;
+  text-align: center;
+ }
