@@ -1,4 +1,6 @@
-$(document).ready(function () {
+
+//character counter
+$(document).ready(function() {
   let tweetLimit = 140;
 
   $("#tweet-text").keyup(function () {

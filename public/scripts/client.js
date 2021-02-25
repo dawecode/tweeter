@@ -6,7 +6,7 @@ const escape = function(str) {
 };
 
 
- //create tweets
+//create tweets
 const createTweetElement = function(tweetObj) {
   const timeStamp = moment(tweetObj.created_at).fromNow();
   let $tweet = $(` 
@@ -24,33 +24,29 @@ const createTweetElement = function(tweetObj) {
       <i class="fas fa-flag"></i> 
       <i class="fas fa-retweet"></i>
       <i class="fas fa-heart"></i>
-      </article>` );
+      </article>`);
 
   return $tweet;
 };
 
 //render tweets
-const renderTweets = function (tweets) {
+const renderTweets = function(tweets) {
   // loops through tweets
   for (let tweet of tweets) {
-    const newTweet = createTweetElement(tweet)
+    const newTweet = createTweetElement(tweet);
     $("#tweets-container").prepend(newTweet);
   }
 };
 
 
-
+// load tweets with Ajax get request inside
 const loadTweets = function() {
-  // Send a request to the API with Ajax
-  // Ajax calls are asynchronous
   $.ajax({
-    url:"/tweets",
+    url: "/tweets",
     method: "GET"
   })
     .done((data) => {
-  
       renderTweets(data);
-
     })
     .fail((err) => {
       // fail case
@@ -59,19 +55,19 @@ const loadTweets = function() {
     .always(() => console.log('request to the API has been performed'));
 };
 
+// doc ready
+$(document).ready(function() {
 
-$(document).ready(function () {
-
-  $("form").on("submit", function (event) {
+  $("form").on("submit", function(event) {
     // prevent the default behavior of the form submission
     event.preventDefault();
-    console.log("Submit form"); 
+    console.log("Submit form");
     
     // Create a string in the format name=value&name=value...
     const tweetData = $(this).serialize();
-    console.log(tweetData);
+    // Create a variable that finds the text length
     const numbChar = $(".new-tweet").find("textarea").val().length;
-   // console.log(numbChar)
+    //conditions if text is over 140 or empty
     if (numbChar > 140) {
       $(".error1").text("Character number exceeded").slideDown();
     
@@ -82,15 +78,17 @@ $(document).ready(function () {
       //slide up when error corrected
       $(".error1").slideUp();
       $(".error2").slideUp();
-
+      //ajax POST
       $.ajax({
         type: "POST",
         url: "/tweets",
         data: tweetData,
       }).then(loadTweets)
-        .catch(res => console.log(res))
-
-       $(".new-tweet").find("form").trigger("reset"); 
+        .catch(res => console.log(res));
+      //clear form
+      $(".new-tweet").find("form").trigger("reset");
+      //reset counter
+      $(".counter").text(140);
     }
   });
   
