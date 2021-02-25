@@ -39,6 +39,7 @@ article {
   margin-top: 50px;
   margin-bottom:50px;
   padding: 20px;
+  word-break: break-word;
 }
 
 article:hover{

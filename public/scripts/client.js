@@ -4,6 +4,13 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
+
  //create tweets
 const createTweetElement = function (tweetObj) {
   const timeStamp = moment(tweetObj.created_at).fromNow();
@@ -14,7 +21,7 @@ const createTweetElement = function (tweetObj) {
     <p>${tweetObj.user.name}</p></span>
     <p class="handle">${tweetObj.user.handle}</p>
   </header>
-    <p class="profile-tweet">${tweetObj.content.text}</p>
+    <p class="profile-tweet">${escape(tweetObj.content.text)}</p>
   
   <footer>
     <span class ="time">${timeStamp}</span>
@@ -34,7 +41,6 @@ const renderTweets = function (tweets) {
     const newTweet = createTweetElement(tweet)
     $("#tweets-container").prepend(newTweet);
   }
-
 };
 
 
@@ -47,12 +53,7 @@ const loadTweets = function() {
     method: "GET"
   })
     .done((data) => {
-
-      // empty the container
-      $('#tweet-container').empty();
-
-      // success! we're getting the data back :)
-      console.log(data);
+  
       renderTweets(data);
 
     })
@@ -74,14 +75,22 @@ $(document).ready(function () {
     // Create a string in the format name=value&name=value...
     const tweetData = $(this).serialize();
     console.log(tweetData);
+    const numbChar = $(".new-tweet").find("textarea").val().length;
+    console.log(numbChar)
+    if (numbChar > 140) {
+      alert("Character number exceeded");
+    } else if (numbChar === 0) {
+      alert("Please write a message");
+    } else {
+      $.ajax({
+        type: "POST",
+        url: "/tweets",
+        data: tweetData,
+      }).then(loadTweets)
+        .catch(res => console.log(res))
 
-    $.ajax({
-      type: "POST",
-      url: "/tweets",
-      data: tweetData,
-    }).then(loadTweets)
-      .catch(res => console.log(res))
-
+       $(".new-tweet").find("form").trigger("reset"); 
+    }
   });
   
   loadTweets();
