@@ -84,8 +84,10 @@ $(document).ready(function () {
       $(".error2").text("Please write a message").slideDown();
   
     } else {
+      //slide up when error corrected
       $(".error1").slideUp();
       $(".error2").slideUp();
+      
       $.ajax({
         type: "POST",
         url: "/tweets",
