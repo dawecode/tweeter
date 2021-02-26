@@ -4,6 +4,14 @@ Tweeter is a simple, single-page Twitter clone.
 
 This project was done with starter code that was forked and cloned from Lighthouse Labs to build upon it to practice HTML, CSS, JS, jQuery and AJAX front-end skills, and Node, Express and MongoDB back-end skills.
 
+
+
+## Sceenshots
+!["Screenshot of desktop version"](https://github.com/dawecode/tweeter/blob/master/docs/tweeter-desktop.png)
+!["Screenshot of desktop version while hovering"](https://github.com/dawecode/tweeter/blob/master/docs/tweeter-desktop-hover.png)
+!["Screenshot of tablet version"](https://github.com/dawecode/tweeter/blob/master/docs/tweeter-tablet.png)
+
+
 ## Getting Started
 
 1. Fork this repository, then clone your fork of this repository.
@@ -18,3 +26,5 @@ This project was done with starter code that was forked and cloned from Lighthou
 - Chance 
 - Moment
 - Body-Parser
+
+
