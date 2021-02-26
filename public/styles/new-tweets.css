@@ -34,6 +34,7 @@
   font-family: "Bungee",cursive;
 }
 
+/* over limit color change*/
 .counter-overlimit {
   color:red;
 }

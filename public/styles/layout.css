@@ -58,8 +58,8 @@ article:hover{
   text-shadow:2px 2px rgba(1, 5, 14, 0.3); 
 }
 
-/* display of handle with over */
-article:hover .handle{
+/* display of handle with hover */
+article:hover .handle {
   visibility: visible;
 }
 
@@ -68,6 +68,14 @@ article:hover .handle{
   visibility:hidden;
 }
 
+/*display buttons with hover */
+article:hover .buttons {
+  visibility: visible;
+}
+ /* hiding buttons when not hovering */
+.buttons {
+  visibility:hidden;
+}
 article header{
   display:flex;
   justify-content: space-between;
